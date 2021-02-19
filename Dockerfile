@@ -15,4 +15,4 @@ FROM fluent/fluent-bit:1.7
 LABEL maintainer="ingcsmoreno@gmail.com"
 
 COPY --from=plugins /go/src/logzio/build/out_logzio.so /fluent-bit/plugins/
-COPY --from=plugins /lib/ld-musl-*.so.1 /lib/
+COPY --from=plugins /lib/l*musl-*.so.1 /lib/
