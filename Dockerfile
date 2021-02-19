@@ -8,7 +8,7 @@ RUN git clone https://github.com/logzio/fluent-bit-logzio-output.git /go/src/log
 WORKDIR /go/src/logzio
 
 RUN dep ensure -v \
- && go build -a -tags netgo -ldflags '-w -extldflags "-static"' -buildmode=c-shared -o build/out_logzio.so ./output
+ && go build -buildmode=c-shared -o build/out_logzio.so ./output
 
 FROM fluent/fluent-bit:1.7
 
